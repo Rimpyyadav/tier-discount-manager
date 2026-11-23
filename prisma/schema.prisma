@@ -32,3 +32,12 @@ model Session {
   refreshToken        String?
   refreshTokenExpires DateTime?
 }
+model TierRule {
+  id          String   @id @default(cuid())
+  shop        String
+  minQuantity Int
+  percentOff  Float
+  createdAt   DateTime @default(now())
+
+  @@index([shop])
+}
